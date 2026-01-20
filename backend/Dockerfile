@@ -13,9 +13,6 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
-# Create .env file if needed (you can also mount it as a volume)
-# ENV NODE_ENV=production
-
 # Expose the port the app runs on
 EXPOSE 8000
 
