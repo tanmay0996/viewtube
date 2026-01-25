@@ -1,10 +1,11 @@
 node_modules
 npm-debug.log
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+
+# ignore all env files by default
+.env*
+# but allow .env.docker explicitly
+!.env.docker
+
 .git
 dist
 .gitignore

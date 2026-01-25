@@ -5,11 +5,13 @@ services:
     container_name: viewtube-frontend
     build: ./frontend
     ports:
-      - "3000:80"
+      - "3000:3000"
     env_file:
-      - ./frontend/.env
+      - ./frontend/.env.docker
     depends_on:
       - backend
+    networks:
+      - viewtube-network
 
   backend:
     container_name: viewtube-backend
@@ -17,17 +19,25 @@ services:
     ports:
       - "8000:8000"
     env_file:
-      - ./backend/.env
+      - ./backend/.env.docker
     depends_on:
       - mongo
+    networks:
+      - viewtube-network
 
   mongo:
     container_name: viewtube-mongo
-    image: mongo:latest
+    image: mongo:7.0
     ports:
-      - "27017:27017"
+      - "27018:27017"
     volumes:
       - mongo_data:/data/db
+    networks:
+      - viewtube-network
 
 volumes:
   mongo_data:
+
+networks:
+  viewtube-network:
+    driver: bridge

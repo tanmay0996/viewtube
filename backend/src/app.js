@@ -5,7 +5,8 @@ const app = express();
 
 // Define allowed origins
 const allowedOrigins = [
-  "http://localhost:5173",  // Local development origin
+  "http://localhost:5173",
+  "http://localhost:3000",  // Local development origin
   process.env.CORS_ORIGIN  // Production frontend origin
 ];
 
