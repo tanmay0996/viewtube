@@ -27,7 +27,7 @@ services:
 
   mongo:
     container_name: viewtube-mongo
-    image: mongo:7.0
+    image: mongo:7.0 #Supported until 2026
     ports:
       - "27018:27017"
     volumes:
