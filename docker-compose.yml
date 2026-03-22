@@ -3,11 +3,12 @@ version: "3.8"
 services:
   frontend:
     container_name: viewtube-frontend
-    build: ./frontend
+    build:
+      context: ./frontend
+      args:
+        VITE_REACT_APP_BACKEND_URL: ${VITE_REACT_APP_BACKEND_URL}
     ports:
       - "3000:3000"
-    env_file:
-      - ./frontend/.env.docker
     depends_on:
       - backend
     networks:
