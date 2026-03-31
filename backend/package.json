@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node -r dotenv/config src/index.js",
-    "dev": "nodemon  -r dotenv/config --experimental-json-modules  src/index.js"
+    "dev": "nodemon  -r dotenv/config --experimental-json-modules  src/index.js",
+    "format:check": "prettier --check ."
   },
   "keywords": [
     "javascript",
@@ -15,6 +16,8 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "eslint": "^10.0.2",
+    "eslint-config-prettier": "^10.1.8",
     "nodemon": "^3.1.7",
     "prettier": "^3.4.2"
   },
