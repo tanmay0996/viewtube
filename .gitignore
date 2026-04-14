@@ -122,3 +122,4 @@ dist
 .env.*
 .env
 .keys
+CODING_STANDARDS.md
