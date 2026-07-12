@@ -123,3 +123,4 @@ dist
 .env
 .keys
 CODING_STANDARDS.md
+dock.md
